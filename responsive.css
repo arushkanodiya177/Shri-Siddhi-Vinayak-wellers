@@ -1,0 +1,69 @@
+/* ===== Mobile First Responsive Styles ===== */
+
+@media (max-width: 1024px) {
+  .featured-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-container { grid-template-columns: 1fr 1fr; }
+  .enquiry-container, .contact-page-container { grid-template-columns: 1fr; }
+  .modal-body { grid-template-columns: 1fr; }
+  .modal-image img { min-height: 300px; max-height: 350px; }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: block; z-index: 1002;}
+  .nav-menu {
+    position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
+    height: 100vh; background-color: var(--primary); flex-direction: column;
+    justify-content: center; align-items: center; gap: 30px;
+    transition: right 0.4s ease; z-index: 1001; box-shadow: -5px 0 30px rgba(0,0,0,0.5);
+  }
+  .nav-menu.active { right: 0; }
+  .nav-enquiry-btn { display: none; }
+  
+  .hero-title { font-size: 2.5rem; }
+  .hero-desc { font-size: 1rem; }
+  
+  .section { padding: 60px 0; }
+  .section-title { font-size: 2rem; }
+  
+  .featured-grid, .bridal-container, .story-container, .about-editorial {
+    grid-template-columns: 1fr; gap: 30px;
+  }
+  .bridal-image img, .story-image img, .about-image img { height: 350px; }
+  
+  .why-grid, .values-grid { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr; gap: 30px; }
+  .page-header { padding: 140px 0 60px; }
+  .page-header h1 { font-size: 2.2rem; }
+  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-auto-rows: 200px; }
+  .enquiry-form-wrapper, .modal-info { padding: 25px; }
+  
+  .insta-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  
+  /* Showroom Section Mobile */
+  .showroom-card {
+    grid-template-columns: 1fr;
+  }
+  .showroom-info {
+    padding: 40px 20px;
+  }
+  .showroom-image img {
+    height: 300px;
+    border-left: none;
+    border-top: 2px solid var(--gold);
+  }
+  
+  .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+  .whatsapp-float svg { width: 28px; height: 28px; }
+  .back-to-top { bottom: 80px; right: 22px; width: 40px; height: 40px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 2rem; }
+  .btn { padding: 12px 24px; font-size: 0.75rem; }
+  .hero-buttons { flex-direction: column; align-items: center; gap: 15px;}
+  .intro-logo { max-width: 250px; }
+  
+  .insta-grid { grid-template-columns: 1fr; }
+  .insta-overlay svg { width: 35px; height: 35px; }
+}
