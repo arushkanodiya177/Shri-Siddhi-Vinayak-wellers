@@ -1,60 +1,12 @@
 const products = [
-  {
-    id: 1,
-    name: 'Kundan Polki Necklace',
-    category: 'Gold',
-    description: 'An exquisite 22k gold necklace featuring uncut Polki diamonds and traditional Kundan work.',
-    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 2,
-    name: 'Diamond Solitaire Ring',
-    category: 'Diamond',
-    description: 'A stunning brilliant-cut solitaire diamond ring set in a classic white gold band.',
-    image: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 3,
-    name: 'Royal Bridal Choker Set',
-    category: 'Bridal',
-    description: 'A majestic bridal choker set adorned with rubies, emeralds, and cascading pearls.',
-    image: 'https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 4,
-    name: 'Diamond Drop Earrings',
-    category: 'Diamond',
-    description: 'Elegant diamond drop earrings crafted to catch the light from every angle.',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 5,
-    name: 'Traditional Gold Bangles',
-    category: 'Gold',
-    description: 'A set of intricately carved 22k gold bangles, perfect for festive occasions.',
-    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 6,
-    name: 'Emerald Statement Ring',
-    category: 'Diamond',
-    description: 'A bold statement ring featuring a central emerald surrounded by diamond halos.',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b2548e?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 7,
-    name: 'Temple Jewellery Set',
-    category: 'Bridal',
-    description: 'A divine temple jewellery set inspired by South Indian heritage and architecture.',
-    image: 'https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 8,
-    name: 'Classic Gold Chain',
-    category: 'Gold',
-    description: 'A versatile and elegantly designed gold chain for everyday luxury.',
-    image: 'https://images.unsplash.com/photo-1599643478514-4a4e6a4a9c4c?q=80&w=800&auto=format&fit=crop'
-  }
+  { id: 1, name: 'Kundan Polki Necklace', category: 'Gold', description: 'An exquisite 22k gold necklace featuring uncut Polki diamonds and traditional Kundan work.', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop' },
+  { id: 2, name: 'Diamond Solitaire Ring', category: 'Diamond', description: 'A stunning brilliant-cut solitaire diamond ring set in a classic white gold band.', image: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=800&auto=format&fit=crop' },
+  { id: 3, name: 'Royal Bridal Choker Set', category: 'Bridal', description: 'A majestic bridal choker set adorned with rubies, emeralds, and cascading pearls.', image: 'https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?q=80&w=800&auto=format&fit=crop' },
+  { id: 4, name: 'Diamond Drop Earrings', category: 'Diamond', description: 'Elegant diamond drop earrings crafted to catch the light from every angle.', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop' },
+  { id: 5, name: 'Traditional Gold Bangles', category: 'Gold', description: 'A set of intricately carved 22k gold bangles, perfect for festive occasions.', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop' },
+  { id: 6, name: 'Emerald Statement Ring', category: 'Diamond', description: 'A bold statement ring featuring a central emerald surrounded by diamond halos.', image: 'https://images.unsplash.com/photo-1605100804763-247f67b2548e?q=80&w=800&auto=format&fit=crop' },
+  { id: 7, name: 'Temple Jewellery Set', category: 'Bridal', description: 'A divine temple jewellery set inspired by South Indian heritage and architecture.', image: 'https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?q=80&w=800&auto=format&fit=crop' },
+  { id: 8, name: 'Classic Gold Chain', category: 'Gold', description: 'A versatile and elegantly designed gold chain for everyday luxury.', image: 'https://images.unsplash.com/photo-1599643478514-4a4e6a4a9c4c?q=80&w=800&auto=format&fit=crop' }
 ];
 
 const galleryItems = [
@@ -69,7 +21,6 @@ const galleryItems = [
 const whatsappBase = 'https://wa.me/918085512712?text=';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== Product Grid =====
   const productGrid = document.getElementById('product-grid');
   const noResults = document.getElementById('no-results');
   const searchInput = document.getElementById('search-input');
@@ -121,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
           productGrid.appendChild(card);
         });
 
-        // Re-init reveal observer for newly added items
         document.querySelectorAll('.reveal').forEach(el => {
           if (!el.classList.contains('visible')) {
             const observer = new IntersectionObserver((entries) => {
@@ -132,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.querySelectorAll('.view-design-btn').forEach(btn => {
-          btn.addEventListener('click', () => openModal(parseInt(btn.dataset.id)));
+          btn.addEventListener('click', () => window.openModal(parseInt(btn.dataset.id)));
         });
       }
     };
@@ -155,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderProducts();
 
-    // Modal Logic
     const modal = document.getElementById('product-modal');
     const closeModal = document.getElementById('close-modal');
     const modalImg = document.getElementById('modal-img');
@@ -181,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
   }
 
-  // ===== New Designs (Home) =====
   const newDesignsGrid = document.getElementById('new-designs-grid');
   if (newDesignsGrid) {
     products.slice(0, 3).forEach(product => {
@@ -200,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== Gallery =====
   const galleryGrid = document.getElementById('gallery-grid');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
